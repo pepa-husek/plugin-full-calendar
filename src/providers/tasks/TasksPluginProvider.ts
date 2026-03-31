@@ -348,16 +348,26 @@ export class TasksPluginProvider implements CalendarProvider<TasksProviderConfig
         trigger: (event: string, callback: (data: TasksCacheData) => void) => void;
       };
 
-      workspace.trigger('obsidian-tasks-plugin:request-cache-update', callback);
-      setTimeout(() => {
-        if (!this.isTasksCacheWarm) {
-          console.error(
-            "Full Calendar: Timed out waiting for Tasks plugin's cache. The Tasks plugin may not be enabled or may have failed to load."
-          );
-          this.tasksPromise = null;
-          reject(new Error("Timed out waiting for Tasks plugin's cache."));
-        }
-      }, 5000);
+      const MAX_RETRIES = 8;
+      const RETRY_INTERVAL_MS = 3000;
+      let attempt = 0;
+      const retry = () => {
+        workspace.trigger('obsidian-tasks-plugin:request-cache-update', callback);
+        setTimeout(() => {
+          if (this.isTasksCacheWarm) return;
+          attempt++;
+          if (attempt < MAX_RETRIES) {
+            retry();
+          } else {
+            console.error(
+              `Full Calendar: Tasks plugin cache not ready after ${attempt} retries.`
+            );
+            this.tasksPromise = null;
+            reject(new Error('Tasks plugin cache not ready.'));
+          }
+        }, RETRY_INTERVAL_MS);
+      };
+      retry();
     });
     return this.tasksPromise;
   }
@@ -508,7 +518,29 @@ export class TasksPluginProvider implements CalendarProvider<TasksProviderConfig
       on: (event: string, callback: (data: TasksCacheData) => void) => void;
     };
 
-    workspace.on('obsidian-tasks-plugin:cache-update', data => {
+    workspace.on('obsidian-tasks-plugin:cache-update', (data: TasksCacheData) => {
+      if (
+        !this.isTasksCacheWarm &&
+        data?.tasks &&
+        ((typeof data.state === 'string' && data.state === 'Warm') ||
+          (typeof data.state === 'object' && data.state?.name === 'Warm'))
+      ) {
+        this.allTasks = this.parseTasksForCalendar(data.tasks);
+        this.isTasksCacheWarm = true;
+        this.tasksPromise = null;
+        const additions: { event: OFCEvent; location: EventLocation | null }[] = [];
+        for (const task of this.allTasks) {
+          const result = this._taskToOFCEvent(task);
+          if (result) additions.push({ event: result[0], location: result[1] });
+        }
+        if (additions.length > 0 && this.plugin.providerRegistry) {
+          void this.plugin.providerRegistry.processProviderUpdates(this.source.id, {
+            additions,
+            updates: [],
+            deletions: []
+          });
+        }
+      }
       void handleLiveCacheUpdate(data);
     });
     this.isSubscribed = true;
