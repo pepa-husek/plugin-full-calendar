@@ -786,32 +786,25 @@ export class TasksPluginProvider implements CalendarProvider<TasksProviderConfig
       }
     ).plugins?.plugins?.['obsidian-tasks-plugin']?.apiV1;
     if (!tasksApi) {
-      new Notice(t('notices.tasks.apiUnavailable'));
+      new Notice('Tasks plugin API not available.');
       return;
     }
 
-    // Step 1: Use the eventId (Session ID) to look up the full OFCEvent from the main cache.
     const eventFromCache = this.plugin.cache?.getEventById(eventId);
-    if (!eventFromCache || !eventFromCache.uid) {
-      throw new Error(
-        `Could not find event or its persistent UID in the main cache for session ID ${eventId}.`
-      );
+    if (!eventFromCache?.uid) {
+      console.warn(`[Tasks] No cached event or UID for session ID ${eventId}`);
+      return;
     }
-    const persistentId = eventFromCache.uid; // This is the "filePath::lineNumber" ID.
 
-    // Step 2: Use the persistentId to find the corresponding task in the provider's internal cache.
-    const task = this.allTasks.find(t => t.id === persistentId);
+    const task = this.allTasks.find(t => t.id === eventFromCache.uid);
     if (!task) {
-      // This error is more specific and helpful for debugging.
-      throw new Error(`Task with persistent ID ${persistentId} not found in the provider's cache.`);
+      console.warn(`[Tasks] Task ${eventFromCache.uid} not in provider cache`);
+      return;
     }
 
-    // Step 3: Proceed with the rest of the logic, which is now guaranteed to have the correct data.
     const originalMarkdown = task.originalMarkdown;
     const editedTaskLine = await tasksApi.editTaskLineModal(originalMarkdown);
-
     if (editedTaskLine && editedTaskLine !== originalMarkdown) {
-      // The lineNumber on the task object is 1-based, which is what replaceTaskInFile expects.
       await this.replaceTaskInFile(task.filePath, task.lineNumber, [editedTaskLine]);
     }
   }
