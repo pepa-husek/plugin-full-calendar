@@ -59,7 +59,7 @@ const basenameFromEvent = (event: OFCEvent, settings: TitleSettingsLike): string
   switch (event.type) {
     case undefined:
     case 'single':
-      return `${event.date} ${sanitizedTitle}`;
+      return sanitizedTitle;
     case 'recurring': {
       if (event.daysOfWeek && event.daysOfWeek.length > 0) {
         return `(Every ${event.daysOfWeek.join(',')}) ${sanitizedTitle}`;
