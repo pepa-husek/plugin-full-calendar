@@ -1,0 +1,2686 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../whats_new/">
+      
+      
+        <link rel="next" href="../getting_started/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Changelog - Full Calendar Remastered</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Work Sans";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#full-calendar-changelog" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Full Calendar Remastered" class="md-header__button md-logo" aria-label="Full Calendar Remastered" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Full Calendar Remastered
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Changelog
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="light-blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="blue-grey"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/YouFoundJK/plugin-full-calendar" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M448 96c0-35.3-28.7-64-64-64H64C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h320c35.3 0 64-28.7 64-64zM265.8 407.7c0-1.8 0-6 .1-11.6.1-11.4.1-28.8.1-43.7 0-15.6-5.2-25.5-11.3-30.7 37-4.1 76-9.2 76-73.1 0-18.2-6.5-27.3-17.1-39 1.7-4.3 7.4-22-1.7-45-13.9-4.3-45.7 17.9-45.7 17.9-26.6-7.5-56.6-7.5-83.2 0 0 0-31.8-22.2-45.7-17.9-9.1 22.9-3.5 40.6-1.7 45-10.6 11.7-15.6 20.8-15.6 39 0 63.6 37.3 69 74.3 73.1-4.8 4.3-9.1 11.7-10.6 22.3-9.5 4.3-33.8 11.7-48.3-13.9-9.1-15.8-25.5-17.1-25.5-17.1-16.2-.2-1.1 10.2-1.1 10.2 10.8 5 18.4 24.2 18.4 24.2 9.7 29.7 56.1 19.7 56.1 19.7 0 9 .1 21.7.1 30.6 0 4.8.1 8.6.1 10 0 4.3-3 9.5-11.5 8-66-22.1-112.2-84.9-112.2-158.3 0-91.8 70.2-161.5 162-161.5S388 165.6 388 257.4c.1 73.4-44.7 136.3-110.7 158.3-8.4 1.5-11.5-3.7-11.5-8m-90.5-54.8c-.2-1.5 1.1-2.8 3-3.2 1.9-.2 3.7.6 3.9 1.9.3 1.3-1 2.6-3 3-1.9.4-3.7-.4-3.9-1.7m-9.1 3.2c-2.2.2-3.7-.9-3.7-2.4 0-1.3 1.5-2.4 3.5-2.4 1.9-.2 3.7.9 3.7 2.4 0 1.3-1.5 2.4-3.5 2.4m-14.3-2.2c-1.9-.4-3.2-1.9-2.8-3.2s2.4-1.9 4.1-1.5c2 .6 3.3 2.1 2.8 3.4-.4 1.3-2.4 1.9-4.1 1.3m-12.5-7.3c-1.5-1.3-1.9-3.2-.9-4.1.9-1.1 2.8-.9 4.3.6 1.3 1.3 1.8 3.3.9 4.1-.9 1.1-2.8.9-4.3-.6m-8.5-10c-1.1-1.5-1.1-3.2 0-3.9 1.1-.9 2.8-.2 3.7 1.3 1.1 1.5 1.1 3.3 0 4.1-.9.6-2.6 0-3.7-1.5m-6.3-8.8c-1.1-1.3-1.3-2.8-.4-3.5.9-.9 2.4-.4 3.5.6 1.1 1.3 1.3 2.8.4 3.5-.9.9-2.4.4-3.5-.6m-6-6.4c-1.3-.6-1.9-1.7-1.5-2.6.4-.6 1.5-.9 2.8-.4 1.3.7 1.9 1.8 1.5 2.6-.4.9-1.7 1.1-2.8.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    YouFoundJK/plugin-full-calendar
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Full Calendar Remastered" class="md-nav__button md-logo" aria-label="Full Calendar Remastered" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Full Calendar Remastered
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/YouFoundJK/plugin-full-calendar" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M448 96c0-35.3-28.7-64-64-64H64C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h320c35.3 0 64-28.7 64-64zM265.8 407.7c0-1.8 0-6 .1-11.6.1-11.4.1-28.8.1-43.7 0-15.6-5.2-25.5-11.3-30.7 37-4.1 76-9.2 76-73.1 0-18.2-6.5-27.3-17.1-39 1.7-4.3 7.4-22-1.7-45-13.9-4.3-45.7 17.9-45.7 17.9-26.6-7.5-56.6-7.5-83.2 0 0 0-31.8-22.2-45.7-17.9-9.1 22.9-3.5 40.6-1.7 45-10.6 11.7-15.6 20.8-15.6 39 0 63.6 37.3 69 74.3 73.1-4.8 4.3-9.1 11.7-10.6 22.3-9.5 4.3-33.8 11.7-48.3-13.9-9.1-15.8-25.5-17.1-25.5-17.1-16.2-.2-1.1 10.2-1.1 10.2 10.8 5 18.4 24.2 18.4 24.2 9.7 29.7 56.1 19.7 56.1 19.7 0 9 .1 21.7.1 30.6 0 4.8.1 8.6.1 10 0 4.3-3 9.5-11.5 8-66-22.1-112.2-84.9-112.2-158.3 0-91.8 70.2-161.5 162-161.5S388 165.6 388 257.4c.1 73.4-44.7 136.3-110.7 158.3-8.4 1.5-11.5-3.7-11.5-8m-90.5-54.8c-.2-1.5 1.1-2.8 3-3.2 1.9-.2 3.7.6 3.9 1.9.3 1.3-1 2.6-3 3-1.9.4-3.7-.4-3.9-1.7m-9.1 3.2c-2.2.2-3.7-.9-3.7-2.4 0-1.3 1.5-2.4 3.5-2.4 1.9-.2 3.7.9 3.7 2.4 0 1.3-1.5 2.4-3.5 2.4m-14.3-2.2c-1.9-.4-3.2-1.9-2.8-3.2s2.4-1.9 4.1-1.5c2 .6 3.3 2.1 2.8 3.4-.4 1.3-2.4 1.9-4.1 1.3m-12.5-7.3c-1.5-1.3-1.9-3.2-.9-4.1.9-1.1 2.8-.9 4.3.6 1.3 1.3 1.8 3.3.9 4.1-.9 1.1-2.8.9-4.3-.6m-8.5-10c-1.1-1.5-1.1-3.2 0-3.9 1.1-.9 2.8-.2 3.7 1.3 1.1 1.5 1.1 3.3 0 4.1-.9.6-2.6 0-3.7-1.5m-6.3-8.8c-1.1-1.3-1.3-2.8-.4-3.5.9-.9 2.4-.4 3.5.6 1.1 1.3 1.3 2.8.4 3.5-.9.9-2.4.4-3.5-.6m-6-6.4c-1.3-.6-1.9-1.7-1.5-2.6.4-.6 1.5-.9 2.8-.4 1.3.7 1.9 1.8 1.5 2.6-.4.9-1.7 1.1-2.8.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    YouFoundJK/plugin-full-calendar
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../whats_new/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What's New
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#version-01271" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 0.12.7.1
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version 0.12.7.1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#improvements-fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Improvements &amp; Fixes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-0127" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 0.12.7
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-0126" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 0.12.6
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-0125" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 0.12.5
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-0124" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 0.12.4
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-01231-beta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 0.12.3.1-beta
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-0123" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 0.12.3
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-0122-beta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 0.12.2 (beta)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-0121-beta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 0.12.1 (beta)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-0119" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 0.11.9
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-0118" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 0.11.8
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-0117" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 0.11.7
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-0116" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 0.11.6
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-0115-beta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 0.11.5-beta
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-0114" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 0.11.4
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-0113" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 0.11.3
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-0112" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 0.11.2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-0111" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 0.11.1
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-01013-beta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 0.10.13-beta
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-0108" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 0.10.8
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-0107" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 0.10.7
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting_started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Calendar Types
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Calendar Types
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../calendars/local/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Full Note Calendar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../calendars/dailynote/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Daily Note Calendar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../calendars/ics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ICS (Remote and Local)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../calendars/caldav/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CalDAV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../calendars/gcal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Google Calendar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../calendars/tasks-plugin-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tasks Plugin Integration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../calendars/bases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Obsidian Bases Calendar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Events & Features
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Events & Features
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../events/manage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Event Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../events/recurring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recurring Events
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../events/tasks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tasks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../events/categories/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Category Coloring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../views/timeline_view/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Timeline View Usage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../views/workspaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workspaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../events/timezones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Timezone Support
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../events/hover_context/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hover & Context Menu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/i18n/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Internationalization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ChronoAnalyser
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ChronoAnalyser
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chrono_analyser/introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chrono Analyser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chrono_analyser/usecases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Use Cases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chrono_analyser/faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ & Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Settings
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Settings
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../settings/sources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Calendar Sources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../settings/fc_config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Display & Behavior
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Advanced
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced/dataview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dataview Integration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced/data_integrity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Integrity and File Modifications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Privacy & Terms
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Privacy & Terms
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced/privacy-policy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Privacy Policy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced/terms-of-service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terms of Service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#version-01271" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 0.12.7.1
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version 0.12.7.1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#improvements-fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Improvements &amp; Fixes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-0127" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 0.12.7
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-0126" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 0.12.6
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-0125" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 0.12.5
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-0124" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 0.12.4
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-01231-beta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 0.12.3.1-beta
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-0123" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 0.12.3
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-0122-beta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 0.12.2 (beta)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-0121-beta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 0.12.1 (beta)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-0119" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 0.11.9
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-0118" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 0.11.8
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-0117" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 0.11.7
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-0116" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 0.11.6
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-0115-beta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 0.11.5-beta
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-0114" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 0.11.4
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-0113" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 0.11.3
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-0112" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 0.11.2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-0111" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 0.11.1
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-01013-beta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 0.10.13-beta
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-0108" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 0.10.8
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-0107" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 0.10.7
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="full-calendar-changelog">Full Calendar Changelog<a class="headerlink" href="#full-calendar-changelog" title="Permanent link">&para;</a></h1>
+<p>This page provides a detailed breakdown of every version of the Full Calendar plugin, including new features, improvements, and bugfixes.</p>
+<h2 id="version-01271">Version 0.12.7.1<a class="headerlink" href="#version-01271" title="Permanent link">&para;</a></h2>
+<h3 id="new-features">New Features<a class="headerlink" href="#new-features" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Asynchronous Event Discovery Pipeline</strong><br />
+<em>The core synchronization engine has been rewritten to eliminate UI freezes and dramatically improve load performance.</em><ul>
+<li>Re-architected <code>ProviderRegistry</code> remote discovery into a true Stage 1 → Stage 2 pipeline.</li>
+<li>Stage 2 for each provider now begins immediately after its own Stage 1 completes, removing the previous global Promise barrier.</li>
+<li>Enables background pipelining and significantly reduces perceived startup time.</li>
+</ul>
+</li>
+</ul>
+<h3 id="improvements-fixes">Improvements &amp; Fixes<a class="headerlink" href="#improvements-fixes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>Local Provider Concurrency</strong><br />
+<em>Improved I/O throughput and removed unnecessary blocking during startup.</em></p>
+<ul>
+<li>Parallelized Local Provider Stage 1 reads using <code>Promise.all</code> instead of sequential <code>for..of</code> iteration.</li>
+<li>Prevents main-thread stalls during large vault scans.</li>
+</ul>
+</li>
+<li>
+<p><strong>EventCache Optimization</strong><br />
+<em>Removed expensive diffing operations that caused major slowdowns on large datasets.</em></p>
+<ul>
+<li>Eliminated O(N) <code>JSON.stringify</code> comparisons in <code>EventCache.syncCalendar</code> when cache size changes significantly (e.g., Stage 2 replacing Stage 1 data).</li>
+<li>Added short-circuit invalidation logic to bypass redundant comparisons.</li>
+</ul>
+</li>
+<li>
+<p><strong>Selective UI Reconciliation</strong><br />
+<em>Replaced full calendar teardown cycles with targeted updates.</em></p>
+<ul>
+<li>Updated <code>EventCache</code> and <code>CalendarView</code> flush callbacks to accept an <code>affectedCalendars</code> array.</li>
+<li>Replaced <code>removeAllEventSources()</code> with selective <code>removeEventSource</code> / <code>addEventSource</code> operations for dirty calendars only.</li>
+<li>Fully resolves prior 1–3 second UI freezes during large refreshes.</li>
+</ul>
+</li>
+<li>
+<p><strong>DailyNoteProvider Algorithm Fix</strong><br />
+<em>Eliminated a critical O(N²) bottleneck in event resolution.</em></p>
+<ul>
+<li>Removed full Vault Daily Note cache iteration from <code>getEventHandle</code>.</li>
+<li>Events now resolve purely by date string.</li>
+<li><code>ProviderRegistry</code> securely injects authoritative <code>location.path</code> metadata before write/delete operations.</li>
+</ul>
+</li>
+<li>
+<p><strong>Performance Audit Results</strong><br />
+<em>Benchmark run on 1000+ Daily Note events and 69 Google Calendar events.</em></p>
+<ul>
+<li>Daily Note Stage 1: 1209.1ms → 110.8ms (~11x faster)</li>
+<li>Daily Note Stage 2: 2839.4ms → 143.3ms (~20x faster)</li>
+<li>Remote Stage timings remain steady while now starting earlier in the pipeline.</li>
+<li>Total two-stage discovery: 4880.9ms → 908.9ms (&gt;5x faster overall)</li>
+<li>Complete elimination of observable main-thread UI freezing on load.</li>
+</ul>
+</li>
+<li>
+<p><strong>Linting &amp; Type Safety</strong><br />
+<em>Strengthened long-term maintainability and compliance.</em></p>
+<ul>
+<li>Enforced ESLint rules for UI string formatting consistency.</li>
+<li>Improved TypeScript type safety across core components.</li>
+<li>Refactored related modules to align with stricter linting and safer type contracts.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="version-0127">Version 0.12.7<a class="headerlink" href="#version-0127" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong>Local ICS Support</strong><br />
+<em>You can now view <code>.ics</code> files stored directly in your Obsidian vault!</em></p>
+<ul>
+<li>Added a mode toggle for standard Web URLs versus Vault relative files.</li>
+<li>Extended provider interfaces to safely support the <code>app.vault</code> API.</li>
+</ul>
+</li>
+<li>
+<p><strong>Timezone &amp; DST Hardening</strong> (#194)<br />
+<em>The timezone pipeline has been modularized and significantly hardened for recurring events crossing Daylight Saving Time boundaries.</em></p>
+<ul>
+<li>Removed <code>luxon</code> entirely in favor of native and internal logic.</li>
+<li>Corrected floating time expansion, EU/US DST transitions, and half-hour/45-min offset zones.</li>
+<li>Restored dynamic display timezone toggles.</li>
+<li>Fixed missing DTSTART/EXDATE alignment in RRule passthrough.</li>
+</ul>
+</li>
+<li>
+<p><strong>Staged Loading Architecture</strong><br />
+<em>Dramatic startup performance and UI responsiveness improvements.</em></p>
+<ul>
+<li>Providers now load events in two stages: Stage 1 quickly fetches a 3-month window surrounding the current date, while Stage 2 quietly loads the full history in the background.</li>
+<li>Eliminates UI locking when CalDAV or Google APIs stall or time out on huge event caches.</li>
+</ul>
+</li>
+<li>
+<p><strong>Linting &amp; Code Quality</strong><br />
+<em>The codebase has been migrated to standard <code>eslint.config.mjs</code> and native <code>eslint-plugin-obsidianmd</code>.</em></p>
+<ul>
+<li>Refactored 80+ warnings across 18 core files.</li>
+<li>Eliminated thousands of unsafe <code>any</code> usages and tightened type safety for caching and Google Auth.</li>
+<li>Safeguarded tests with mocked vaults and standard JS generic mocks.</li>
+</ul>
+</li>
+<li>
+<p><strong>General UI Fixes</strong> (#169, #191, #214, #218)<br />
+<em>Fixed LiveSync header injections by targeting <code>contentEl</code>, improved mobile responsiveness across fullcalendar views, improved edit modal error namespace, and added proper API error handling for HTTP POST timeouts.</em></p>
+</li>
+</ul>
+<hr />
+<h2 id="version-0126">Version 0.12.6<a class="headerlink" href="#version-0126" title="Permanent link">&para;</a></h2>
+<p>Thanks to <a href="https://github.com/kapej42">@kapej42</a> and <a href="https://github.com/mivanit">@mivanit</a> for the incredible contributions in this release!</p>
+<ul>
+<li>
+<p><strong>Full CalDAV Two-Way Sync</strong> (#205)<br />
+<em>CalDAV calendars are no longer read-only! You can now create, edit, and delete events directly in Obsidian, and changes will sync back to your CalDAV server.</em></p>
+</li>
+<li>
+<p><strong>Mobile Workspace Support</strong> (#203)<br />
+<em>Workspaces are now fully accessible on mobile!</em></p>
+<ul>
+<li>Added workspace button to footer toolbar on mobile/narrow views.</li>
+<li>Improved menu handling and truncated labels for better fit.</li>
+<li>Renamed button from <code>WS ▾</code> to <code>Workspace ▾</code> for clarity.</li>
+</ul>
+</li>
+<li>
+<p><strong>Mobile Monthly View</strong> (#201)<br />
+<em>You can now access the monthly view on mobile devices via the view dropdown or workspace settings.</em></p>
+</li>
+<li>
+<p><strong>Rich Read-Only Modal</strong> (#205)<br />
+<em>The event details modal for read-only events has been upgraded to show rich information including descriptions, attendees, and more, matching the editing experience.</em></p>
+</li>
+<li>
+<p><strong>ICS Parsing &amp; Date Validation</strong> (#199, #203)<br />
+<em>Major hardening of the ICS parser for better compatibility and stability:</em></p>
+<ul>
+<li><strong>Timezones:</strong> Map Windows timezones (e.g., <code>W. Europe Standard Time</code>) to IANA identifiers, fixing issues with Outlook/Exchange calendars falling back to UTC.</li>
+<li><strong>Date Handling:</strong> Convert <code>YYYYMMDD</code> dates to ISO format, validated skip dates in recurring events, and handled all-day events more robustly.</li>
+<li><strong>Validation:</strong> Added defensive checks to prevent <code>RangeError: Invalid time value</code> crashes and improved error logging.</li>
+</ul>
+</li>
+<li>
+<p><strong>Google Calendar Settings</strong> (#204)<br />
+<em>Fixed an issue where the Google Calendar settings menu for credentials was not displaying correctly.</em></p>
+</li>
+<li>
+<p><strong>Title Parsing</strong> (#203)<br />
+<em>Fixed category parsing to prevent false positives (e.g., "anything - Red Hat One") and now shows the full title when no category is defined.</em></p>
+</li>
+<li>
+<p><strong>Other Fixes</strong>  </p>
+<ul>
+<li>Scheduler license key is now only included when the resource-timeline plugin is loaded.</li>
+<li>Updated <code>CONTRIBUTING.md</code> standards.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="version-0125">Version 0.12.5<a class="headerlink" href="#version-0125" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong>CalDAV validation and parsing</strong> (#193)<br />
+<em>CalDAVProvider now validates calendar collections with PROPFIND, parses calendar-data via DOMParser, adds JSDOM-backed tests, and surfaces clearer errors when a URL is not a calendar collection.</em></p>
+</li>
+<li>
+<p><strong>Provider initialization and cache refresh</strong> (#173)<br />
+<em>Providers call initialize() after construction, load events into the cache with completion callbacks, adjust load priorities, and resync event sources without a full calendar rebuild.</em></p>
+</li>
+<li>
+<p><strong>Google auth and recurring timezone handling</strong> (#191, #190, #94)<br />
+<em>Mobile OAuth opens windows synchronously to avoid popup blockers; recurring Google events now honor exdates and BYDAY across timezones, correctly hiding deleted instances and preserving durations across DST.</em></p>
+</li>
+<li>
+<p><strong>ChronoAnalyser data integrity and Bases provider</strong><br />
+<em>ChronoAnalyser pulls from the main EventStore with corrected category/project parsing, and you can now add an Obsidian Bases calendar (with a guard to enable the Bases plugin first).</em> </p>
+</li>
+</ul>
+<hr />
+<h2 id="version-0124">Version 0.12.4<a class="headerlink" href="#version-0124" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong>CalDAV and Provider Architecture Refactor</strong> (#cc01102)<br />
+<em>The calendar source/provider system has been refactored for modularity, reliability, and easier extension. CalDAV support is now more robust and easier to configure.</em></p>
+</li>
+<li>
+<p><strong>Multi-Language (i18n) Support</strong><br />
+<em>Full Calendar now supports multiple languages. The UI will automatically switch based on your Obsidian language setting. Developers can add new translations via the i18n system with type-safe keys.</em></p>
+</li>
+<li>
+<p><strong>Provider Registry and Error Handling</strong><br />
+<em>Provider registry logic has been improved for better calendar source management and error handling. Adding new calendar types is now simpler and safer.</em></p>
+</li>
+<li>
+<p><strong>Documentation and Translation Files</strong><br />
+<em>Updated documentation and added instructions for contributing new translations. See <a href="../features/i18n/">i18n documentation</a>.</em> </p>
+</li>
+</ul>
+<hr />
+<h2 id="version-01231-beta">Version 0.12.3.1-beta<a class="headerlink" href="#version-01231-beta" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong>Tasks Provider Rearchitected for Performance and Precision</strong> (#151, #155)<br />
+<em>The Tasks provider is now powered by the official Tasks plugin's live cache, eliminating manual vault scans and delivering instant updates. Edits are now "surgical," preserving user metadata like links, tags, and comments when scheduling or completing tasks.</em></p>
+</li>
+<li>
+<p><strong>Robust and Stable Settings UI</strong> (#141)<br />
+<em>The settings panel has been refactored for stability. The color picker no longer loses focus on changes, and a new <code>CalendarSettingRow</code> component ensures a consistent and reliable layout for all calendar sources.</em></p>
+</li>
+<li>
+<p><strong>Provider-Specific Task Completion</strong> (#143, #144)<br />
+<em>The <code>toggleComplete</code> logic is now abstracted, allowing calendar providers to implement their own custom behavior for completing tasks.</em></p>
+</li>
+<li>
+<p><strong>ICS Timezone Fallback</strong> (#91)<br />
+<em>Remote ICS calendars with unrecognized timezones will now safely fall back to UTC instead of failing to load.</em></p>
+</li>
+</ul>
+<hr />
+<h2 id="version-0123">Version 0.12.3<a class="headerlink" href="#version-0123" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong>Deep Tasks Integration with Backlog &amp; Filtering</strong> (#122, #128, #136)<br />
+<em>Full Calendar now has first-class support for the Obsidian Tasks plugin. A new "Tasks" calendar source syncs your tasks directly onto the calendar. Features include a dedicated task backlog, drag-and-drop rescheduling, and in-calendar completion. Create, update, and delete tasks without leaving the calendar view.</em></p>
+</li>
+<li>
+<p><strong>Advanced Date Navigation</strong> (#106)<br />
+<em>Navigate your calendar with precision using the new "Go To" dropdown in the toolbar. It features a reusable <code>DatePicker</code> and context-aware navigation. Right-click on the calendar to jump to a specific month, week, or day.</em></p>
+</li>
+<li>
+<p><strong>Task Management Workflow &amp; Parsing</strong> (#132, #134, #138)<br />
+<em>The Tasks integration includes advanced parsing for dated and undated tasks, multi-day event support, and custom status detection. A new setting allows stripping tags from task titles for a cleaner display. The entire parsing logic is covered by a comprehensive test suite for maximum reliability.</em></p>
+</li>
+<li>
+<p><strong>Performance &amp; Stability</strong><br />
+<em>The plugin now performs surgical updates on file changes instead of full-vault rescans, significantly improving performance in large vaults. Remote calendars now load in a non-blocking, priority-ordered manner, and race conditions during event source removal have been fixed.</em></p>
+</li>
+<li>
+<p><strong>Provider Architecture</strong><br />
+<em>The provider registry now loads calendars with priority and uses a new <code>isFileRelevant()</code> hook for cleaner file-change handling. "Manage calendar" logic has been delegated to the respective providers for better modularity.</em></p>
+</li>
+<li>
+<p><strong>Notification and Reminder Reliability</strong><br />
+<em>End-time reminders now fire correctly for events that are already in progress, ensuring you never miss the end of an important block of time.</em></p>
+</li>
+<li>
+<p><strong>Core Component Stability</strong> (#100, #101, #126)<br />
+<em>Fixed numerous bugs, including a race condition when removing event sources, an issue preventing the create modal from appearing if no editable calendars exist, and a bug where the Daily Notes calendar would fail without a template. New calendars now appear instantly in settings without a "Provider not found" flash.</em></p>
+</li>
+</ul>
+<hr />
+<h2 id="version-0122-beta">Version 0.12.2 (beta)<a class="headerlink" href="#version-0122-beta" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong>Multi-day Daily Note events with explicit endDate</strong><br />
+<em>Daily Note calendar now supports explicit multi‑day events via <code>[endDate:: YYYY-MM-DD]</code> while remaining backward compatible with legacy overnight detection.</em></p>
+</li>
+<li>
+<p><strong>Central TimeEngine</strong><br />
+<em>Single timer maintains a sorted time-sensitive cache and publishes a <code>time-tick</code> event consumed by status bar, notifications, and other listeners.</em></p>
+</li>
+<li>
+<p><strong>Status Bar current/upcoming events</strong><br />
+<em>Lightweight status bar UI subscribes to <code>TimeEngine</code> to surface what's happening now and next.</em></p>
+</li>
+<li>
+<p><strong>Interactive time‑axis zoom</strong> (#96)<br />
+<em>Ctrl/Cmd + scroll to dynamically zoom the vertical (timeGrid) or horizontal (resourceTimeline) axis for fast focus changes.</em></p>
+</li>
+<li>
+<p><strong>Advanced recurrence intervals &amp; positional monthly rules</strong> (#97)<br />
+<em>Support for interval-based repeats (e.g., every 2 weeks) and positional monthly rules (2nd Tuesday, last Friday) with iCal import/export parity.</em></p>
+</li>
+<li>
+<p><strong>Codebase compliance &amp; safety</strong><br />
+<em>Replaced loose <code>any</code> casts, moved inline styles to CSS, added <code>instanceof</code> guards for file/folder objects, removed custom leaf detaching on unload.</em></p>
+</li>
+<li>
+<p><strong>Reactive calendar view lifecycle</strong><br />
+<em><code>view-config-changed</code> now triggers targeted cache repopulation and a new <code>resync</code> event prompts precise re-renders for snappier UI updates.</em></p>
+</li>
+<li>
+<p><strong>NotificationManager refactor</strong><br />
+<em>No internal timer; now a passive subscriber to <code>TimeEngine</code>, reducing duplicate intervals and simplifying lifecycle management.</em></p>
+</li>
+<li>
+<p><strong>Robust timezone conversion for cross-day events</strong><br />
+<em><code>convertEvent</code> rewritten as a pure function; correctly handles explicit <code>endDate</code> and legacy overnight semantics with stricter type guards.</em></p>
+</li>
+</ul>
+<hr />
+<h2 id="version-0121-beta">Version 0.12.1 (beta)<a class="headerlink" href="#version-0121-beta" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong>Event Reminder System with Desktop Notifications (BETA)</strong><br />
+<em>Introducing the <code>NotificationManager</code> for native desktop notifications. Users can opt-in to receive reminders 10 minutes before events start and, optionally, 10 minutes before they end. Perfect for never missing important meetings or deadlines.</em></p>
+</li>
+<li>
+<p><strong>Multi-Account Google Calendar Integration</strong><br />
+<em>Google Calendar integration now supports connecting and managing multiple accounts simultaneously. Features a dedicated account management hub with a streamlined two-step wizard for adding new calendars from any connected account.</em></p>
+</li>
+<li>
+<p><strong>Provider-Based Architecture with Multi-Account Support</strong><br />
+<em>Complete architectural overhaul to a provider-based system where each calendar source (Local, Daily Notes, ICS, CalDAV, Google) is a self-contained, instanced provider. The new <code>ProviderRegistry</code> acts as a central persistence gateway, managing all I/O and abstracting storage details. This enables stateful features and robust multi-account Google Calendar integration.</em></p>
+</li>
+<li>
+<p><strong>Event-Driven Settings with Instant Updates</strong><br />
+<em>Settings persistence refactored to a publish/subscribe model. The <code>saveSettings</code> function now diffs old vs new state and publishes granular events (<code>sources-changed</code>, <code>view-config-changed</code>, <code>settings-updated</code>). Calendar views re-render instantly without flicker or unnecessary reloads.</em></p>
+</li>
+<li>
+<p><strong>Lazy-Loading for Faster Startup Performance</strong><br />
+<em>Heavy dependencies are now dynamically imported only when needed: FullCalendar engine loads when opening a calendar view, React modals load on demand. This dramatically reduces startup time and memory usage.</em></p>
+</li>
+<li>
+<p><strong>Centralized Event Enhancement Pipeline</strong><br />
+<em>New <code>EventEnhancer</code> module centralizes all timezone conversions and category parsing, essentially intercepting all raw events befor it reaches the Cache. Business logic extracted into dedicated stateless modules with a new <code>WorkspaceManager</code> handling all workspace filtering and display logic.</em></p>
+</li>
+<li>
+<p><strong>Timezone Handling for Recurring Events</strong> <a href="https://github.com/YouFoundJK/plugin-full-calendar/issues/94">#94</a><br />
+<em>Recurring events now properly handle timezones with endDate support, resolving timezone branching issues and ensuring correct time display across different time zones.</em></p>
+</li>
+<li>
+<p><strong>ICS events now loads properly</strong> <a href="https://github.com/YouFoundJK/plugin-full-calendar/issues/91">#91</a><br />
+<em>Parsing issues in Remote ICS calendar is fixed and should now load properly.</em></p>
+</li>
+</ul>
+<hr />
+<h2 id="version-0119">Version 0.11.9<a class="headerlink" href="#version-0119" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong>Calendar Workspaces</strong> (#90)<br />
+<em>Save and switch between customized calendar setups (sources, filters, and view preferences). Workspaces include a header switcher, a command palette action ("Full Calendar: Switch Workspace"), and an optional default workspace on startup. Saved state covers selected sources (Local, Daily Notes, ICS, CalDAV, Google), category/sub‑category filters, tasks visibility, all‑day toggle, initial view (month/week/day/timeline), week start, and time‑grid display options.</em></p>
+</li>
+<li>
+<p><strong>Faster Switching and Rendering</strong><br />
+<em>Workspace application is incremental (sources → filters → view) to avoid full calendar rebuilds. Switching preserves context where possible (e.g., scroll/selection) and significantly improves responsiveness on large vaults.</em></p>
+</li>
+<li>
+<p><strong>Workspace Management UX</strong><br />
+<em>Add Save as Workspace, Rename, Delete in the calendar header menu; set a Default Workspace in Settings; and assign hotkeys through Obsidian’s Hotkeys for one‑press switching.</em></p>
+</li>
+<li>
+<p><strong>Edit Modal Sub‑category Parsing</strong><br />
+<em>Fixes a regression where sub‑categories could disappear when editing the title in the modal. The title parser now consistently preserves the <code>Category - SubCategory - Title</code> format on save.</em></p>
+</li>
+<li>
+<p><strong>Workspace Persistence Edge Cases</strong><br />
+<em>Improved robustness when loading a workspace that references a removed or renamed source. Adds safe fallbacks to an "All Events" view and clearer status messaging.</em></p>
+</li>
+</ul>
+<hr />
+<h2 id="version-0118">Version 0.11.8<a class="headerlink" href="#version-0118" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong>Business Hours and Background Events Support</strong><br />
+<em>Highlight working hours in calendar views and display events as background highlights (e.g., vacations or focus blocks). Configurable via settings and event frontmatter.</em></p>
+</li>
+<li>
+<p><strong>Timeline View Category Shadow Events</strong> (#76)<br />
+<em>Adds optional display of category shadow events in Timeline View for better visual context and planning.</em></p>
+</li>
+<li>
+<p><strong>Real-Time Duplicate Event Validation</strong> (#67)<br />
+<em>Prevents creation of duplicate events in the calendar interface, improving scheduling accuracy.</em></p>
+</li>
+<li>
+<p><strong>Edit Modal Now Supports Subcategory Editing</strong><br />
+<em>The "Edit Event" modal now parses and displays sub-categories directly in the event title. Users can edit them inline and changes are preserved.</em></p>
+</li>
+<li>
+<p><strong>Settings Modal Reorganization and Footer</strong><br />
+<em>UI updates include reorganized settings for better clarity, hover hints for display options, and a new footer for versioning and help links.</em></p>
+</li>
+<li>
+<p><strong>Configuration Migration for Legacy Support</strong><br />
+<em>Legacy settings like <code>subprojectKeywords_exclude</code> are migrated automatically, and missing fields (e.g., <code>persona</code>) are filled safely.</em></p>
+</li>
+<li>
+<p><strong>Type Safety and Safer DOM Manipulations</strong> (#69, #71)<br />
+<em>Removed unsafe type assertions across key modules (<code>DailyNoteCalendar</code>, <code>GoogleCalendar</code>, <code>interop</code>) and introduced robust DOM update utilities (<code>safeCreateEl</code>, <code>safeEmpty</code>).</em></p>
+</li>
+<li>
+<p><strong>Recurring Task Completion Preserves Child Timing</strong> (#75)<br />
+<em>Undoing completed recurring tasks now correctly retains the timing of override events. Adds full test coverage for various edge cases.</em></p>
+</li>
+<li>
+<p><strong>All-Day Events Treated as Floating in RRULE</strong><br />
+<em>All-day recurring events now behave correctly as floating events, fixing unintended start time offsets.</em></p>
+</li>
+<li>
+<p><strong>Coverage for Business Hours, Background Events, and Override Logic</strong><br />
+<em>New test suites validate schema correctness, UI rendering, and recurring timing behavior.</em></p>
+</li>
+</ul>
+<hr />
+<h2 id="version-0117">Version 0.11.7<a class="headerlink" href="#version-0117" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong>Full Google Calendar Integration with Two‑Way Sync</strong><br />
+<em>Connect your Google account to create, modify, and delete events (including recurring events) directly in Obsidian. Includes OAuth 2.0 authentication, calendar selection, and proper token refresh handling.</em></p>
+</li>
+<li>
+<p><strong>Centralized and Reusable Form Components</strong><br />
+<em>Inputs like URL, Username, Password, Directory Select, and Heading have been refactored into dual‑mode primitives with a <code>readOnly</code> mode for consistent display. A generic <code>TextInput</code> replaces one‑off components.</em></p>
+</li>
+<li>
+<p><strong>Modularized Settings Tab and Changelog Component</strong><br />
+<em>Settings sections are now organized into dedicated renderers with improved type safety. A new <code>Changelog.tsx</code> component has been added for clearer update visibility.</em></p>
+</li>
+<li>
+<p><strong>Unified Event Parsing Pipeline</strong><br />
+<em>Calendar parsers now output raw events without settings dependencies and pass them through a single <code>enhanceEvent</code> function for category logic. Tests have been updated to separately verify raw parsing and enhancement.</em></p>
+</li>
+<li>
+<p><strong>Modular Event Cache Management</strong><br />
+<em>The <code>EventCache</code> logic is split into dedicated modules (<code>RemoteCacheUpdater</code>, <code>LocalCacheUpdater</code>, <code>IdentifierManager</code>, <code>RecurringEventManager</code>), making synchronization and recurring event handling more reliable.</em></p>
+</li>
+<li>
+<p><strong>Daily Note Calendar Parsing and Cache Update Logic</strong><br />
+<em>Parsing bugs in <code>DailyNoteCalendar</code> have been fixed, and <code>modifyEvent</code> now correctly flags dirty events to ensure the UI updates when frontmatter changes (e.g., <code>skipDate</code>).</em></p>
+</li>
+<li>
+<p><strong>Codebase Refactor for Type Safety and Maintainability</strong><br />
+<em>Shared types and utilities have been centralized, internal names clarified, and redundant code removed—all without changing user‑facing behavior.</em></p>
+</li>
+</ul>
+<hr />
+<h2 id="version-0116">Version 0.11.6<a class="headerlink" href="#version-0116" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong>Advanced Categorization with Hierarchical Timeline View</strong><br />
+<em>Events can now be organized by categories and sub-categories in a new Resource Timeline view. Expandable groups and aggregated parent rows make it easier to manage complex schedules.</em></p>
+</li>
+<li>
+<p><strong>Drag-and-Drop Category Reassignment</strong><br />
+<em>Change an event’s category or sub-category directly from the timeline view by dragging it to a different lane. Titles and metadata update automatically.</em></p>
+</li>
+<li>
+<p><strong>Cleaner UI and Initial View Options</strong><br />
+<em>The event modal and settings UI have been polished with dropdown options and a new initial view setting that supports the timeline view.</em></p>
+</li>
+<li>
+<p><strong>Smarter Event Titles and Filenames</strong><br />
+<em>Events now display clearer titles (e.g., <code>SubCategory - Event Name</code>) while keeping filenames and internal data consistent.</em></p>
+</li>
+<li>
+<p><strong>Multi-Level Category Parsing</strong><br />
+<em>Parsing of event titles with multiple category levels (e.g., <code>Category - SubCategory - Title</code>) has been fixed, ensuring correct category and sub-category assignment.</em></p>
+</li>
+<li>
+<p><strong>License Update</strong><br />
+<em>The plugin license has been updated to GPLv3 to comply with FullCalendar requirements.</em></p>
+</li>
+</ul>
+<hr />
+<h2 id="version-0115-beta">Version 0.11.5-beta<a class="headerlink" href="#version-0115-beta" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong>Monthly and Yearly Recurring Events</strong><br />
+<em>You can now create events that repeat every month or every year — perfect for things like anniversaries, billing cycles, or project reviews.</em></p>
+</li>
+<li>
+<p><strong>Smarter "Repeats" Menu in Event Modal</strong><br />
+<em>The old "Recurring" checkbox is gone. Instead, use a new dropdown to choose from Weekly, Monthly, or Yearly recurrence. The UI updates dynamically to match your selection.</em></p>
+</li>
+<li>
+<p><strong>Human-Friendly Filenames for Recurring Notes</strong><br />
+<em>Recurring event notes now get cleaner, more descriptive names like <code>(Every year on July 30th) My Event.md</code>.</em></p>
+</li>
+<li>
+<p><strong>Enhanced Timezone and All-Day Support</strong><br />
+<em>Timezone handling for recurring events is now more accurate, and All-Day events display correctly across time boundaries.</em></p>
+</li>
+<li>
+<p><strong>Right-Click Task Toggle for Recurring Tasks</strong><br />
+<em>Recurring tasks can now be marked as complete using the right-click menu, just like one-off tasks.</em></p>
+</li>
+<li>
+<p><strong>Safer Rendering and UI Cleanups</strong><br />
+<em>Removed use of unsafe HTML injection in the UI. Improved event rendering, loading states, and general UI responsiveness.</em></p>
+</li>
+</ul>
+<hr />
+<h2 id="version-0114">Version 0.11.4<a class="headerlink" href="#version-0114" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong>Smarter Recurring Events and Tasks</strong><br />
+<em>Recurring events can now be edited per-instance — drag, resize, or complete a task without affecting the whole series. Changes are reversible and tracked cleanly.</em></p>
+</li>
+<li>
+<p><strong>Safe Deletion with Confirmation Options</strong><br />
+<em>Deleting a recurring event now asks whether to remove just one instance, the entire series, or promote existing edits to standalone events.</em></p>
+</li>
+<li>
+<p><strong>Better Task Behavior for Repeating Events</strong><br />
+<em>Recurring tasks now behave just like regular ones — you can check them off individually, and they show up correctly in the calendar.</em></p>
+</li>
+<li>
+<p><strong>Multi-day all-day events fix by @yalikebaz</strong><br />
+<em>Multi-day all-day events made inclusive for local calendars. Thanks to @yalikebaz for the fix!</em></p>
+</li>
+<li>
+<p><strong>Performance and Architecture Improvements</strong><br />
+<em>Refactored recurring event logic, improved performance on large calendars, and cleaned up the plugin architecture to prepare for future features.</em></p>
+</li>
+</ul>
+<hr />
+<h2 id="version-0113">Version 0.11.3<a class="headerlink" href="#version-0113" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong>Insights Engine has smarter Dashboard with Personas</strong><br />
+<em>Adding persona (predefined rules like "Productivity", "Routine") to Categories in Insight Config Setting now cater to more powerful analysis.</em></p>
+</li>
+<li>
+<p><strong>Insights Panel and Dashboard Bugfixes</strong><br />
+<em>Multiple bugfixes and UI adjustments focused on the Insights panel.</em></p>
+</li>
+</ul>
+<hr />
+<h2 id="version-0112">Version 0.11.2<a class="headerlink" href="#version-0112" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong>Insights Engine in ChronoAnalyser</strong><br />
+<em>New intelligent engine that can analyse your calendar for past events and give you cool insights.</em></p>
+</li>
+<li>
+<p><strong>Redesigned ChronoAnalyser UI/UX</strong><br />
+<em>Chronoanalyser now much more elegant. Check it using the <code>Analysis</code> button in the Full-Calendar Window.</em></p>
+</li>
+<li>
+<p><strong>Multiple Bugfixes in ChronoAnalyser</strong><br />
+<em>Make ChronoAnalyser more stable and reliable. Plotting and Insights now work more reliably.</em></p>
+</li>
+</ul>
+<hr />
+<h2 id="version-0111">Version 0.11.1<a class="headerlink" href="#version-0111" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong>Category Coloring Engine and Settings UI</strong><br />
+<em>A new optional setting, 'Enable Category Coloring,' allows you to color events based on a category defined in the event's title (e.g., 'Work - Project Meeting'). This overrides the default calendar color for fine-grained visual organization.</em></p>
+</li>
+<li>
+<p><strong>Category-Aware Event Modal</strong><br />
+<em>The Edit/Create Event modal now features a dedicated 'Category' input field. It provides intelligent autocomplete suggestions based on all your previously used categories, making categorization fast and consistent.</em></p>
+</li>
+<li>
+<p><strong>Redesigned Event Modal UI/UX</strong><br />
+<em>The Edit/Create Event modal has been completely redesigned with a polished two-column layout, logical grouping of fields, and a dedicated footer for actions, improving clarity and ergonomics.</em></p>
+</li>
+<li>
+<p><strong>Color Palette Enhancements</strong><br />
+<em>Colors no longer default to black, but are now rotated from a carefully chosen Palette.</em></p>
+</li>
+<li>
+<p><strong>"Open Note" Workflow Enhancement</strong><br />
+<em>Clicking 'Open Note' in the modal now opens the note in a split view, improving calendar-note navigation.</em></p>
+</li>
+</ul>
+<hr />
+<h2 id="version-01013-beta">Version 0.10.13-beta<a class="headerlink" href="#version-01013-beta" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong>Robust Timezone Support</strong><br />
+<em>Events from local and remote calendars are now fully timezone-aware, fixing bugs related to DST and travel.</em></p>
+</li>
+<li>
+<p><strong>Strict Timezone Mode for Daily Notes</strong><br />
+<em>A new setting allows users to anchor daily note events to a specific timezone, just like regular notes.</em></p>
+</li>
+<li>
+<p><strong>Correctly Parse UTC Events from ICS Feeds</strong><br />
+<em>Fixed a critical bug where events specified in UTC from Google Calendar and other sources would appear at the wrong time.</em></p>
+</li>
+</ul>
+<hr />
+<h2 id="version-0108">Version 0.10.8<a class="headerlink" href="#version-0108" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>ChronoAnalyser Released</strong><br />
+<em>ChronoAnalyser can now analyse your time spending! Check the new <code>Analysis</code> button in the Full-Calendar Window.</em></li>
+</ul>
+<hr />
+<h2 id="version-0107">Version 0.10.7<a class="headerlink" href="#version-0107" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Initial Plugin Release</strong><br />
+<em>Welcome to the first version of the enhanced Full Calendar!</em></li>
+</ul>
+<hr />
+<p><em>For a summary of major features, see <a href="../whats_new/">What's New</a>.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.sections", "navigation.expand"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
