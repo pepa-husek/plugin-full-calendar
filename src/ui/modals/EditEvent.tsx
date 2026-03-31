@@ -417,7 +417,7 @@ export const EditEvent = ({
             <div className="setting-item-name">{t('modals.editEvent.fields.date.label')}</div>
           </div>
           <div className="setting-item-control">
-            <input type="date" value={date} required onChange={e => setDate(e.target.value)} />
+            <input type="date" lang="cs" value={date} required onChange={e => setDate(e.target.value)} />
           </div>
         </div>
 
@@ -685,6 +685,7 @@ export const EditEvent = ({
               <div className="setting-item-control">
                 <input
                   type="date"
+                  lang="cs"
                   value={endRecur || ''}
                   onChange={e => setEndRecur(e.target.value || undefined)}
                 />

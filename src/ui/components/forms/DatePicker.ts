@@ -15,6 +15,7 @@
 
 import flatpickr from 'flatpickr';
 import { Instance as FlatpickrInstance } from 'flatpickr/dist/types/instance';
+import { Czech } from 'flatpickr/dist/l10n/cs.js';
 
 const setCssProps = (element: HTMLElement, props: Record<string, string>): void => {
   Object.entries(props).forEach(([key, value]) => {
@@ -55,7 +56,7 @@ export class DatePicker {
       mode: 'single',
       dateFormat: 'Y-m-d',
       altInput: true,
-      altFormat: 'M j, Y',
+      altFormat: 'j. n. Y',
       enableTime: false,
       ...options
     };
@@ -65,6 +66,7 @@ export class DatePicker {
 
   private initialize(): void {
     this.instance = flatpickr(this.element, {
+      locale: Czech,
       mode: this.options.mode,
       dateFormat: this.options.dateFormat,
       altInput: this.options.altInput,

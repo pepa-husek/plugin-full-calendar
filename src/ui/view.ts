@@ -587,6 +587,7 @@ export class CalendarView extends ItemView {
         })(),
         // Pass workspace-aware granular view settings
         firstDay: calendarConfig.firstDay,
+        locale: 'cs',
         timeFormat24h: calendarConfig.timeFormat24h,
         slotMinTime: calendarConfig.slotMinTime,
         slotMaxTime: calendarConfig.slotMaxTime,

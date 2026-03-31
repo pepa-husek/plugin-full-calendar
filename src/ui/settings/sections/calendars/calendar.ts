@@ -19,8 +19,10 @@ import type {
   EventApi,
   EventClickArg,
   EventHoveringArg,
-  EventSourceInput
+  EventSourceInput,
+  LocaleInput
 } from '@fullcalendar/core';
+import csLocale from '@fullcalendar/core/locales/cs';
 
 import { Menu } from 'obsidian';
 import type { PluginDef } from '@fullcalendar/core';
@@ -43,6 +45,7 @@ interface ExtraRenderProps {
   modifyEvent?: (event: EventApi, oldEvent: EventApi, newResource?: string) => Promise<boolean>;
   eventMouseEnter?: (info: EventHoveringArg) => void;
   firstDay?: number;
+  locale?: string;
   initialView?: { desktop: string; mobile: string };
   timeFormat24h?: boolean;
   openContextMenuForEvent?: (event: EventApi, mouseEvent: MouseEvent) => Promise<void>;
@@ -337,6 +340,10 @@ export async function renderCalendar(
     },
 
     firstDay: settings?.firstDay,
+    ...(settings?.locale && {
+      locales: [csLocale] as LocaleInput[],
+      locale: settings.locale
+    }),
     // New granular view configuration settings
     ...(settings?.slotMinTime !== undefined && { slotMinTime: settings.slotMinTime }),
     ...(settings?.slotMaxTime !== undefined && { slotMaxTime: settings.slotMaxTime }),

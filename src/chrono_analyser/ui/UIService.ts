@@ -7,6 +7,7 @@
 import { App, debounce } from 'obsidian';
 import flatpickr from 'flatpickr';
 import { Instance as FlatpickrInstance } from 'flatpickr/dist/types/instance';
+import { Czech } from 'flatpickr/dist/l10n/cs.js';
 import * as UI from './ui';
 import { AnalysisFilters } from '../data/DataManager';
 import { TimeRecord } from '../data/types';
@@ -345,10 +346,11 @@ export class UIService {
     const datePickerEl = this.rootEl.querySelector<HTMLInputElement>('#dateRangePicker');
     if (datePickerEl) {
       this.flatpickrInstance = flatpickr(datePickerEl, {
+        locale: Czech,
         mode: 'range',
         dateFormat: 'Y-m-d',
         altInput: true,
-        altFormat: 'M j, Y',
+        altFormat: 'j. n. Y',
         onChange: this.onFilterChange
       });
     }
