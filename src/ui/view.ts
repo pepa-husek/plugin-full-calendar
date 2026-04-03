@@ -634,6 +634,15 @@ export class CalendarView extends ItemView {
               }
 
               if (!this.plugin.cache.isEventEditable(info.event.id)) {
+                const uid = info.event.extendedProps?.uid as string | undefined;
+                if (uid) {
+                  for (const provider of this.plugin.providerRegistry.getActiveProviders()) {
+                    if ('editByUid' in provider && typeof provider.editByUid === 'function') {
+                      const handled = await (provider as unknown as { editByUid: (uid: string) => Promise<boolean> }).editByUid(uid);
+                      if (handled) return;
+                    }
+                  }
+                }
                 const { launchEventDetailsModal } = await import('./modals/event_modal');
                 launchEventDetailsModal(this.plugin, info.event.id);
                 return;

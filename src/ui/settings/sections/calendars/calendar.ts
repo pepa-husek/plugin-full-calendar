@@ -155,11 +155,6 @@ export async function renderCalendar(
     .filter(Boolean)
     .join(',');
 
-  // Add workspace and navigate buttons to the left side of toolbar when not narrow
-  const leftToolbarGroup = !isNarrow
-    ? 'workspace prev,next today,navigate'
-    : 'prev,next today,navigate';
-
   // The comma between 'analysis' and the view group creates the visual separation.
   const rightToolbarGroup = [!isNarrow ? 'analysis' : null, viewButtonGroup]
     .filter(Boolean)
@@ -167,18 +162,13 @@ export async function renderCalendar(
 
   const headerToolbar = !isNarrow
     ? {
-        left: leftToolbarGroup,
+        left: 'workspace today prevMonth,monthNav,nextMonth prevYear,yearNav,nextYear',
         center: 'title',
         right: rightToolbarGroup
       }
-    : false; // On narrow views (including mobile), the header is empty.
-
-  const footerToolbar = isNarrow
-    ? {
-        left: 'workspace,today,navigate,prev,next',
-        right: rightToolbarGroup // Analysis is already filtered out for narrow views.
-      }
     : false;
+
+  const footerToolbar = false;
 
   type ViewSpec = {
     type: string;
@@ -246,13 +236,13 @@ export async function renderCalendar(
     }
   };
 
-  // Add the "Navigate" dropdown - will be configured after calendar creation
-  customButtonConfig.navigate = {
-    text: '▾',
-    click: (ev: MouseEvent) => {
-      // This will be replaced after calendar creation
-    }
-  };
+  // Month/year navigation buttons (handlers wired after render)
+  customButtonConfig.prevMonth = { text: '◀', click: () => {} };
+  customButtonConfig.monthNav = { text: '···', click: () => {} };
+  customButtonConfig.nextMonth = { text: '▶', click: () => {} };
+  customButtonConfig.prevYear = { text: '«', click: () => {} };
+  customButtonConfig.yearNav = { text: '····', click: () => {} };
+  customButtonConfig.nextYear = { text: '»', click: () => {} };
 
   // Conditionally add the "Timeline" dropdown
   if (showResourceViews) {
@@ -459,16 +449,253 @@ export async function renderCalendar(
 
   cal.render();
 
-  // Set up date navigation after calendar is created
-  const dateNavigation = createDateNavigation(cal, containerEl);
+  // --- Month / Year navigation ---
+  const czMonths = Array.from({ length: 12 }, (_, i) => {
+    const n = new Date(2026, i, 1).toLocaleDateString('cs', { month: 'long' });
+    return n.charAt(0).toUpperCase() + n.slice(1);
+  });
 
-  // Update the navigate button click handler
-  const navigateButton = containerEl.querySelector('.fc-navigate-button') as HTMLButtonElement;
-  if (navigateButton) {
-    navigateButton.addEventListener('click', (ev: MouseEvent) => {
-      dateNavigation.showNavigationMenu(ev);
+  const btnCls = 'fc-button fc-button-primary';
+
+  // Shared logic: build month and year widgets, wire handlers, return updater
+  const wireNavWidget = (
+    prevMonthEl: HTMLElement,
+    monthNavEl: HTMLElement,
+    nextMonthEl: HTMLElement,
+    prevYearEl: HTMLElement,
+    yearNavEl: HTMLElement,
+    nextYearEl: HTMLElement
+  ) => {
+    // -- Month arrows --
+    prevMonthEl.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const d = cal.getDate();
+      cal.gotoDate(new Date(d.getFullYear(), d.getMonth() - 1, 1));
     });
+    nextMonthEl.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const d = cal.getDate();
+      cal.gotoDate(new Date(d.getFullYear(), d.getMonth() + 1, 1));
+    });
+
+    // -- Month dropdown --
+    monthNavEl.addEventListener('click', (ev: MouseEvent) => {
+      ev.stopPropagation();
+      const currentDate = cal.getDate();
+      const menu = new Menu();
+      czMonths.forEach((name, i) => {
+        menu.addItem(item => {
+          item
+            .setTitle(name)
+            .setIcon(i === currentDate.getMonth() ? 'check' : '')
+            .onClick(() => {
+              cal.gotoDate(new Date(currentDate.getFullYear(), i, 1));
+              if (!cal.view.type.includes('dayGrid')) {
+                cal.changeView('dayGridMonth');
+              }
+            });
+        });
+      });
+      menu.showAtMouseEvent(ev);
+    });
+
+    // -- Year click --
+    let yearEditing = false;
+    let activeYearInput: HTMLInputElement | null = null;
+
+    yearNavEl.addEventListener('click', (ev: MouseEvent) => {
+      ev.stopPropagation();
+      if (yearEditing) return;
+
+      const currentDate = cal.getDate();
+      const currentYear = currentDate.getFullYear();
+
+      if (isNarrow) {
+        // Mobile: year menu (no keyboard, no squashing)
+        const menu = new Menu();
+        for (let y = currentYear - 4; y <= currentYear + 6; y++) {
+          menu.addItem(item => {
+            item
+              .setTitle(String(y))
+              .setIcon(y === currentYear ? 'check' : '')
+              .onClick(() => {
+                cal.gotoDate(new Date(y, currentDate.getMonth(), 1));
+              });
+          });
+        }
+        menu.showAtMouseEvent(ev);
+        return;
+      }
+
+      // Desktop: floating popup with editable input
+      yearEditing = true;
+
+      const popup = document.createElement('div');
+      popup.style.cssText =
+        'position:fixed;z-index:1000;display:flex;align-items:center;' +
+        'padding:8px 12px;background:var(--background-primary);' +
+        'border:1px solid var(--background-modifier-border);border-radius:8px;' +
+        'box-shadow:0 4px 12px rgba(0,0,0,0.15);';
+
+      const input = document.createElement('input');
+      input.type = 'number';
+      input.inputMode = 'numeric';
+      input.value = String(currentYear);
+      input.min = '1900';
+      input.max = '2100';
+      input.style.cssText =
+        'width:64px;padding:4px 6px;border:1px solid var(--background-modifier-border);' +
+        'border-radius:4px;background:var(--background-secondary);color:var(--text-normal);' +
+        'font-size:16px;text-align:center;outline:none;-moz-appearance:textfield;';
+
+      popup.appendChild(input);
+      document.body.appendChild(popup);
+      activeYearInput = input;
+
+      const rect = yearNavEl.getBoundingClientRect();
+      popup.style.left = `${rect.left}px`;
+      popup.style.bottom = `${window.innerHeight - rect.top + 6}px`;
+
+      input.focus();
+      input.select();
+
+      const close = (commit: boolean) => {
+        if (!yearEditing) return;
+        yearEditing = false;
+        activeYearInput = null;
+        popup.remove();
+        document.removeEventListener('pointerdown', onOutside);
+        if (commit) {
+          const y = parseInt(input.value, 10);
+          if (!isNaN(y) && y >= 1900 && y <= 2100) {
+            cal.gotoDate(new Date(y, cal.getDate().getMonth(), 1));
+          }
+        }
+        yearNavEl.textContent = cal.getDate().getFullYear() + ' ▾';
+      };
+
+      input.addEventListener('keydown', (e: KeyboardEvent) => {
+        if (e.key === 'Enter') { e.preventDefault(); close(true); }
+        else if (e.key === 'Escape') { e.preventDefault(); close(false); }
+      });
+
+      const onOutside = (e: Event) => {
+        if (!popup.contains(e.target as Node) && e.target !== yearNavEl) {
+          close(true);
+        }
+      };
+      setTimeout(() => document.addEventListener('pointerdown', onOutside), 10);
+    });
+
+    // -- Year arrows --
+    prevYearEl.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const d = cal.getDate();
+      cal.gotoDate(new Date(d.getFullYear() - 1, d.getMonth(), 1));
+    });
+    nextYearEl.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const d = cal.getDate();
+      cal.gotoDate(new Date(d.getFullYear() + 1, d.getMonth(), 1));
+    });
+
+    return () => {
+      const d = cal.getDate();
+      monthNavEl.textContent = czMonths[d.getMonth()] + ' ▾';
+      if (yearEditing && activeYearInput) {
+        activeYearInput.value = String(d.getFullYear());
+      } else if (!yearEditing) {
+        yearNavEl.textContent = d.getFullYear() + ' ▾';
+      }
+    };
+  };
+
+  if (isNarrow) {
+    // --- Mobile: custom two-row toolbar prepended before the calendar ---
+    const toolbar = document.createElement('div');
+    toolbar.style.cssText = 'display:flex;flex-direction:column;gap:4px;margin-top:6px;';
+
+    const row = (leftEl: HTMLElement, rightEls: HTMLElement[]) => {
+      const r = document.createElement('div');
+      r.style.cssText = 'display:flex;justify-content:space-between;align-items:center;';
+      r.appendChild(leftEl);
+      const g = document.createElement('div');
+      g.className = 'fc-button-group';
+      g.style.cssText = 'display:inline-flex;';
+      rightEls.forEach(el => g.appendChild(el));
+      r.appendChild(g);
+      return r;
+    };
+
+    const mkBtn = (text: string, cls?: string) => {
+      const b = document.createElement('button');
+      b.className = cls || btnCls;
+      b.textContent = text;
+      b.type = 'button';
+      return b;
+    };
+
+    const todayBtn = mkBtn('Nyní');
+    todayBtn.addEventListener('click', () => cal.today());
+
+    const mPrev = mkBtn('◀');  mPrev.style.setProperty('font-size', '1.3em', 'important');
+    const mNav = mkBtn('···');
+    const mNext = mkBtn('▶');  mNext.style.setProperty('font-size', '1.3em', 'important');
+
+    const viewBtn = mkBtn('View ▾');
+    viewBtn.addEventListener('click', (ev: MouseEvent) => {
+      const menu = new Menu();
+      const viewOptions: Record<string, string> = {
+        dayGridMonth: 'Month', timeGrid3Days: '3 Days',
+        timeGridDay: 'Day', listWeek: 'List'
+      };
+      for (const [vn, vl] of Object.entries(viewOptions)) {
+        menu.addItem(item => item.setTitle(vl).onClick(() => cal.changeView(vn)));
+      }
+      menu.showAtMouseEvent(ev);
+    });
+
+    const yPrev = mkBtn('');
+    const yNext = mkBtn('');
+    const yNav = mkBtn('····');
+    for (const [yArrow, glyph] of [[yPrev, '«'], [yNext, '»']] as [HTMLButtonElement, string][]) {
+      const span = document.createElement('span');
+      span.textContent = glyph;
+      span.style.cssText = 'display:block;font-size:2.4em;line-height:1;transform:translateY(-10%);';
+      yArrow.appendChild(span);
+      yArrow.style.setProperty('display', 'inline-flex', 'important');
+      yArrow.style.setProperty('align-items', 'center', 'important');
+      yArrow.style.setProperty('justify-content', 'center', 'important');
+      yArrow.style.setProperty('padding-top', '0', 'important');
+      yArrow.style.setProperty('padding-bottom', '0', 'important');
+    }
+
+    toolbar.appendChild(row(todayBtn, [mPrev, mNav, mNext]));
+    toolbar.appendChild(row(viewBtn, [yPrev, yNav, yNext]));
+
+    containerEl.appendChild(toolbar);
+
+    const updateMobile = wireNavWidget(mPrev, mNav, mNext, yPrev, yNav, yNext);
+    updateMobile();
+    cal.on('datesSet', updateMobile);
+  } else {
+    // --- Desktop: FullCalendar custom buttons, wire after render ---
+    const pm = containerEl.querySelector('.fc-prevMonth-button') as HTMLElement;
+    const mn = containerEl.querySelector('.fc-monthNav-button') as HTMLElement;
+    const nm = containerEl.querySelector('.fc-nextMonth-button') as HTMLElement;
+    const py = containerEl.querySelector('.fc-prevYear-button') as HTMLElement;
+    const yn = containerEl.querySelector('.fc-yearNav-button') as HTMLElement;
+    const ny = containerEl.querySelector('.fc-nextYear-button') as HTMLElement;
+
+    if (pm && mn && nm && py && yn && ny) {
+      const updateDesktop = wireNavWidget(pm, mn, nm, py, yn, ny);
+      updateDesktop();
+      cal.on('datesSet', updateDesktop);
+    }
   }
+
+  // Keep DateNavigation for right-click context menus (desktop)
+  const dateNavigation = createDateNavigation(cal, containerEl);
 
   // Add general right-click handler to calendar container for view-level navigation
   if (viewRightClick) {
