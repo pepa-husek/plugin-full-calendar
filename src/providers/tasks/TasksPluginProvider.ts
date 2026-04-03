@@ -774,6 +774,30 @@ export class TasksPluginProvider implements CalendarProvider<TasksProviderConfig
     }
   }
 
+  public async editByUid(uid: string): Promise<boolean> {
+    const task = this.allTasks.find(t => t.id === uid);
+    if (!task) return false;
+
+    const tasksApi = (
+      this.plugin.app as unknown as {
+        plugins?: {
+          plugins?: Record<
+            string,
+            { apiV1?: { editTaskLineModal: (line: string) => Promise<string | undefined> } }
+          >;
+        };
+      }
+    ).plugins?.plugins?.['obsidian-tasks-plugin']?.apiV1;
+    if (!tasksApi) return false;
+
+    const originalMarkdown = task.originalMarkdown;
+    const editedTaskLine = await tasksApi.editTaskLineModal(originalMarkdown);
+    if (editedTaskLine && editedTaskLine !== originalMarkdown) {
+      await this.replaceTaskInFile(task.filePath, task.lineNumber, [editedTaskLine]);
+    }
+    return true;
+  }
+
   public async editInProviderUI(eventId: string): Promise<void> {
     const tasksApi = (
       this.plugin.app as unknown as {
